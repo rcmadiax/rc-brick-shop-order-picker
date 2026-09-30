@@ -8,8 +8,8 @@
 .stats{position:fixed;left:max(24px,env(safe-area-inset-left));top:calc(18px + env(safe-area-inset-top));width:258px;z-index:30;padding:16px 14px;display:block}
 .statline{font-size:17px}.progress{margin-top:10px;height:12px}.meta{margin-top:10px;font-size:11px;line-height:1.4}.file{display:none}
 .stats>.actions{display:flex;margin-top:12px}.stats>.actions .startpack{width:100%;padding:14px 10px;font-size:15px}.stats>.actions .reset{width:100%}
-.filters{top:calc(8px + env(safe-area-inset-top));max-width:none;margin:8px 0;padding:4px}.filters button{padding:10px 4px;min-height:40px}
-.modebar{position:sticky;top:calc(60px + env(safe-area-inset-top));z-index:18;margin:8px 0;background:#f3f5f7;padding:4px}
+.filters{top:calc(8px + env(safe-area-inset-top));max-width:none;margin:8px 0;padding:4px;background:transparent}.filters button{padding:10px 4px;min-height:40px}
+.modebar{position:sticky;top:calc(60px + env(safe-area-inset-top));z-index:18;margin:8px 0;background:transparent;padding:4px}
 .group{font-size:26px;margin-top:18px}
 .card{grid-template-columns:minmax(0,1fr) 260px;min-height:106px;padding:14px 18px;gap:20px}
 .title{font-size:17px}.detail{font-size:12px}.pickside{justify-content:flex-end;gap:18px}.pickimgbox{width:126px;height:92px}.pickimg{max-width:116px;max-height:82px}.pickqty{min-width:104px}.pick{font-size:28px}
@@ -25,7 +25,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Order Picker">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
-</head><body><main class='app'><div class='top'><div><div class='brand'>RC BRICK SHOP</div><div class='sub'>Order Picker + Packer · Mobile</div></div><div class='badge'>MODULE 01 · v0.8.1</div></div>
+</head><body><main class='app'><div class='top'><div><div class='brand'>RC BRICK SHOP</div><div class='sub'>Order Picker + Packer · Mobile</div></div><div class='badge'>MODULE 01 · v0.8.2</div></div>
 <label class='upload'>Upload eBay Paid & Shipped CSV<small>Tap here to choose your order report</small><input id='file' type='file' accept='.csv,text/csv'></label>
 <section id='stats' class='stats' hidden><div class='statline'><span id='progressText'>0 / 0 picked</span><span id='pct'>0%</span></div><div class='progress'><div id='bar' class='bar'></div></div><div id='meta' class='meta'></div><div id='fname' class='file'></div><div class='actions'><button class='reset' id='reset'>Reset picked status</button></div></section>
 <div id='filters' class='filters' hidden><button data-f='all' class='on'>ALL</button><button data-f='unpicked'>UNPICKED</button><button data-f='picked'>PICKED</button></div><div id='modebar' class='modebar' hidden><button id='pickMode' class='on'>PICK</button><button id='packMode' disabled>PACK</button></div><div id='list'><div class='empty'>Upload an eBay report to start a picking session.</div></div></main><div id='imgModal' class='imgmodal' hidden><button id='closeImg' class='closeimg'>×</button><img id='bigImg' alt='Part image'></div>
