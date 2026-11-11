@@ -18,14 +18,50 @@
 .navpack{max-width:620px;margin:10px auto 0}.packbtn{max-width:760px;display:block;margin:12px auto 0}.package>.tracking.packconfirm{max-width:760px;margin:12px auto}
 }
 
+
+
+/* Management Suite visual system — presentation only */
+:root{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#192842;background:#f3f6fc}
+body{background:#f3f6fc;color:#192842}
+.app{max-width:1020px}
+.top{background:transparent;color:#192842;border-radius:0;padding:13px 0;align-items:center;box-shadow:none}
+.brand{font-size:19px;font-weight:850;letter-spacing:-.35px}
+.sub{color:#6b7a93;font-size:12px;font-weight:650}
+.badge{background:#fff;border:1px solid #d6e0ef;border-radius:9px;color:#1d3053;font-size:10px;white-space:nowrap}
+.brandwrap{display:flex;align-items:center;gap:12px;min-width:0}
+.brandicon{width:43px;height:43px;object-fit:contain;flex:none}
+.upload{background:#fff;border:1.5px dashed #b7cbe8;border-radius:12px;color:#1c3155;padding:23px 15px;box-shadow:0 2px 5px #1b31500a}
+.upload small,.meta,.detail,.file,.packsummary,.orderids{color:#6b7a93}
+.stats,.package,.card,.empty{border:1px solid #d9e1ee;border-radius:13px;background:#fff;box-shadow:0 2px 7px #1c35500b}
+.stats{isolation:isolate;overflow:hidden}
+.statline{color:#1b2a46}
+.progress{background:#e7edf5}.bar{background:#2169d4}
+.filters{background:transparent;border-radius:12px}
+.filters button,.modebar button,.navpack button{border:1px solid #d6e0ef;border-radius:9px;color:#1d3053;background:#fff}
+.filters button.on,.modebar button.on{background:#0865d6;border-color:#0865d6;color:#fff}
+.group{color:#1b2a46;font-size:25px}
+.title,.packtitle{color:#192842}.pick,.packbin{color:#0766d9}
+.card.picked,.package.packed{background:#e8f7ef;border:1.5px solid #1baf65}
+.check{color:#12834a}
+.actions button,.packbtn{border-radius:9px}
+.startpack{background:#0865d6}.reset{background:#edf2f9;color:#1c3155}
+.tracking{background:#f0f6ff;border:1px solid #c5d9f7}
+.packbtn{background:#0865d6}.package.packed .packbtn{background:#18844d}
+.pickimgbox,.partimgbox{border-color:#d9e1ee}
+@media(min-width:900px) and (orientation:landscape){
+.app{max-width:1480px}
+.stats{border:1px solid #d9e1ee;border-radius:13px;background:#fff;box-shadow:0 2px 7px #1c35500b;overflow:hidden}
+.filters,.modebar{background:transparent}
+}
+@media(max-width:430px){.top{padding:11px 12px;gap:8px}.brand{font-size:16px}.brandicon{width:37px;height:37px}.sub{font-size:10px}.badge{font-size:9px;padding:6px}}
 </style>
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#0a84ff">
+<meta name="theme-color" content="#f3f6fc">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="Order Picker">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
-</head><body><main class='app'><div class='top'><div><div class='brand'>RC BRICK SHOP</div><div class='sub'>Order Picker + Packer · Mobile</div></div><div class='badge'>MODULE 01 · v0.8.7</div></div>
+</head><body><main class='app'><div class='top'><div class='brandwrap'><img class='brandicon' src='icons/management-icon.png' alt=''><div><div class='brand'>RC BRICK SHOP</div><div class='sub'>Order Picker & Packer</div></div></div><div class='badge'>v0.9.1</div></div>
 <label class='upload'>Upload eBay Paid & Shipped CSV<small>Tap here to choose your order report</small><input id='file' type='file' accept='.csv,text/csv'></label>
 <section id='stats' class='stats' hidden><div class='statline'><span id='progressText'>0 / 0 picked</span><span id='pct'>0%</span></div><div class='progress'><div id='bar' class='bar'></div></div><div id='meta' class='meta'></div><div id='fname' class='file'></div><div class='actions'><button class='reset' id='reset'>Reset picked status</button></div></section>
 <div id='filters' class='filters' hidden><button data-f='all' class='on'>ALL</button><button data-f='unpicked'>UNPICKED</button><button data-f='picked'>PICKED</button></div><div id='modebar' class='modebar' hidden><button id='pickMode' class='on'>PICK</button><button id='packMode' disabled>PACK</button></div><div id='list'><div class='empty'>Upload an eBay report to start a picking session.</div></div></main><div id='imgModal' class='imgmodal' hidden><button id='closeImg' class='closeimg'>×</button><img id='bigImg' alt='Part image'></div>
