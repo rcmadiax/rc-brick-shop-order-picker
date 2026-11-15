@@ -1,21 +1,22 @@
-RC BRICK SHOP Order Picker v0.9.2
+RC BRICK SHOP Order Picker v0.9.3
 
-What's new in v0.9.2
+What's new in v0.9.3
 --------------------
-- Updated the installable app icon at 192, 256 and 512 px with the same glossy red
-  brick artwork used by RC BRICK SHOP Management v1.0.7.
-- Removed the bright outside edge and stray transparent-edge pixels.
-- Updated the app's service-worker cache key to ensure new assets are cached.
-- Kept the Management-style layout without the old RC BRICK SHOP title/header.
-- Kept all picking and packing logic and local progress storage keys unchanged.
+- Restored the original blue sorting-bin / green-check icon supplied by the user.
+- Replaced the 192 px and 512 px installed-app icons with the exact supplied files.
+- Updated the legacy 256 px icon asset to match the restored artwork.
+- Updated all versioned icon URLs and the service-worker cache key to ensure
+  browsers fetch the new graphics instead of the previous red-brick icon.
+- Kept the v0.9.2 Management-style layout and all picking/packing functionality.
+- No JavaScript workflow logic, storage keys, or order handling was changed.
 
 INSTALL / UPDATE
 ----------------
-1. Back up the existing published Order Picker folder if you want a rollback.
-2. Replace the files hosted at the current app URL with the ZIP contents.
-   Do not change the app URL or origin if you want to preserve locally saved progress.
-3. Reopen or refresh the installed app online to activate the v0.9.2 cache.
-4. If macOS continues to show the OLD icon in the Dock, remove the old Dock/app
-   shortcut and install the PWA again from the same URL, then pin the new shortcut.
+1. Back up the published Order Picker folder if you want a rollback.
+2. Upload/replace ALL files from this ZIP in the same web folder as the current app.
+   Keep the same URL and origin to preserve locally saved picking progress.
+3. Reopen/refresh the online app to activate the updated cache.
+4. If the installed macOS app still shows the old red icon, remove its old
+   app/Dock shortcut and install it again from the SAME URL; then re-pin it.
 
-All existing core application functionality remains the same.
+Files in this ZIP are at the root, ready to upload as-is.
