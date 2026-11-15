@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>RC BRICK SHOP • Order Picking &amp; Packing</title>
+  <link rel="stylesheet" href="picker.css">
+  <link rel="manifest" href="manifest.webmanifest?v=0.9.3">
+  <meta name="theme-color" content="#f5f7fb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Order Picker">
+  <link rel="icon" href="icons/icon-192.png?v=0.9.3" type="image/png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png?v=0.9.3">
+</head>
+<body>
+<main class="picker-app">
+  <div class="workspace">
+    <aside class="sidebar" aria-label="Picking session controls">
+      <label class="upload" for="file">
+        <span class="upload-icon" aria-hidden="true">↑</span>
+        <span class="upload-title">Upload eBay Paid &amp; Shipped CSV</span>
+        <span class="upload-note">Choose your order report to begin</span>
+        <input id="file" type="file" accept=".csv,text/csv">
+      </label>
+      <section id="stats" class="stats" hidden aria-live="polite">
+        <div class="stats-head">SESSION PROGRESS</div>
+        <div class="statline"><span id="progressText">0 / 0 picked</span><span id="pct">0%</span></div>
+        <div class="progress"><div id="bar" class="bar"></div></div>
+        <div id="meta" class="meta"></div>
+        <div id="fname" class="file"></div>
+        <div class="actions"><button type="button" class="reset" id="reset">Reset picked status</button></div>
+      </section>
+      <section id="controls" class="controls" aria-label="Workflow controls">
+        <div id="modebar" class="modebar" hidden><button type="button" id="pickMode" class="on">PICK</button><button type="button" id="packMode" disabled>PACK</button></div>
+        <div id="filters" class="filters" hidden><button type="button" data-f="all" class="on">ALL</button><button type="button" data-f="unpicked">UNPICKED</button><button type="button" data-f="picked">PICKED</button></div>
+      </section>
+      <p class="local-note">Picking and packing progress is saved locally for each uploaded report.</p>
+    </aside>
+    <section class="results" aria-label="Order picking and packing workspace">
+      <div class="results-header"><div><span class="eyebrow">WORKSPACE</span><h2>Picking &amp; packing checklist</h2></div></div>
+      <div id="list"><div class="empty">Upload an eBay report to start a picking session.</div></div>
+    </section>
+  </div>
+</main>
+<div id="imgModal" class="imgmodal" hidden role="dialog" aria-label="Enlarged part image">
+  <button type="button" class="closeimg" id="closeImg" aria-label="Close image">×</button>
+  <img id="bigImg" alt="Enlarged part image">
+</div>
+<script src="picker.js"></script>
+<script>
+if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
+}
+</script>
+</body></html>
