@@ -1,22 +1,18 @@
-RC BRICK SHOP Order Picker v0.9.3
+RC BRICK SHOP Order Picker & Packer v0.9.4
 
-What's new in v0.9.3
---------------------
-- Restored the original blue sorting-bin / green-check icon supplied by the user.
-- Replaced the 192 px and 512 px installed-app icons with the exact supplied files.
-- Updated the legacy 256 px icon asset to match the restored artwork.
-- Updated all versioned icon URLs and the service-worker cache key to ensure
-  browsers fetch the new graphics instead of the previous red-brick icon.
-- Kept the v0.9.2 Management-style layout and all picking/packing functionality.
-- No JavaScript workflow logic, storage keys, or order handling was changed.
+WHAT'S NEW
+- Upload a ZIP containing three CSVs: eBay Paid & Shipped, Brick Owl orders, and Brick Owl order items. Nested folder paths and macOS ZIP metadata are ignored.
+- Also supports an individual eBay CSV as in v0.9.3.
+- Pick all items together, sorted by your inventory bin; vertical EBAY / BRICK OWL marketplace markers distinguish each item.
+- PACK mode displays Brick Owl Order Number instead of unreliable scientific-notation tracking; each Brick Owl order is always its own package. eBay tracking consolidation remains unchanged.
+- Brick Owl quantities and lots are validated against the orders report; the ZIP is rejected if any order does not reconcile, rather than allowing incorrect package completion.
+- Stores picking/packing progress locally per uploaded report file.
+- ZIP extraction is local/offline (bundled JSZip 3.10.1).
 
 INSTALL / UPDATE
-----------------
-1. Back up the published Order Picker folder if you want a rollback.
-2. Upload/replace ALL files from this ZIP in the same web folder as the current app.
-   Keep the same URL and origin to preserve locally saved picking progress.
-3. Reopen/refresh the online app to activate the updated cache.
-4. If the installed macOS app still shows the old red icon, remove its old
-   app/Dock shortcut and install it again from the SAME URL; then re-pin it.
+1. Keep a backup of your prior hosted Order Picker folder.
+2. Replace ALL files in the current hosted folder, including jszip.min.js.
+3. Refresh the PWA/app. The service worker cache version has been updated.
+4. Upload the 3-report ZIP (or an eBay CSV).
 
-Files in this ZIP are at the root, ready to upload as-is.
+Note: Brick Owl Personal Note is treated as inventory-bin location. For mixed batches, any mismatch or missing bin causes import to stop with a clear message.

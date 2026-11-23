@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>RC BRICK SHOP • Order Picking &amp; Packing</title>
   <link rel="stylesheet" href="picker.css">
-  <link rel="manifest" href="manifest.webmanifest?v=0.9.3">
+  <link rel="manifest" href="manifest.webmanifest?v=0.9.4">
   <meta name="theme-color" content="#f5f7fb">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Order Picker">
-  <link rel="icon" href="icons/icon-192.png?v=0.9.3" type="image/png">
-  <link rel="apple-touch-icon" href="icons/icon-192.png?v=0.9.3">
+  <link rel="icon" href="icons/icon-192.png?v=0.9.4" type="image/png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png?v=0.9.4">
 </head>
 <body>
 <main class="picker-app">
@@ -19,9 +19,9 @@
     <aside class="sidebar" aria-label="Picking session controls">
       <label class="upload" for="file">
         <span class="upload-icon" aria-hidden="true">↑</span>
-        <span class="upload-title">Upload eBay Paid &amp; Shipped CSV</span>
-        <span class="upload-note">Choose your order report to begin</span>
-        <input id="file" type="file" accept=".csv,text/csv">
+        <span class="upload-title">Upload eBay + Brick Owl ZIP</span>
+        <span class="upload-note">Or select a single eBay CSV</span>
+        <input id="file" type="file" accept=".zip,.csv,application/zip,text/csv">
       </label>
       <section id="stats" class="stats" hidden aria-live="polite">
         <div class="stats-head">SESSION PROGRESS</div>
@@ -39,7 +39,7 @@
     </aside>
     <section class="results" aria-label="Order picking and packing workspace">
       <div class="results-header"><div><span class="eyebrow">WORKSPACE</span><h2>Picking &amp; packing checklist</h2></div></div>
-      <div id="list"><div class="empty">Upload an eBay report to start a picking session.</div></div>
+      <div id="list"><div class="empty">Upload an eBay + Brick Owl ZIP or an eBay CSV to start a session.</div></div>
     </section>
   </div>
 </main>
@@ -47,6 +47,7 @@
   <button type="button" class="closeimg" id="closeImg" aria-label="Close image">×</button>
   <img id="bigImg" alt="Enlarged part image">
 </div>
+<script src="jszip.min.js"></script>
 <script src="picker.js"></script>
 <script>
 if ('serviceWorker' in navigator && location.protocol.startsWith('http')) {
