@@ -97,3 +97,11 @@ h1{font-size:26px;line-height:1.2;letter-spacing:-.6px;margin:6px 0 6px;font-wei
 .packline{padding:12px 0;border-top:1px solid #e9edf3}
 .packline .packitem{padding:5px 0;border-top:0}
 @media(max-width:430px){.pick-row,.packline{grid-template-columns:18px minmax(0,1fr);gap:6px}.market-tag{font-size:8px;padding:4px 2px}}
+
+/* v0.9.5: chronological order-bin letters for Brick Owl, above the vertical marketplace tag. */
+.market-marker{display:flex;flex-direction:column;gap:4px;min-width:0;align-items:stretch;align-self:stretch}
+.market-marker .market-tag{flex:1;min-height:0;padding-top:4px;padding-bottom:4px}
+.order-letter{display:flex;justify-content:center;align-items:center;min-height:26px;flex:none;border-radius:6px;background:#ff9748;color:#42291a;border:1px solid #e9883d;font-size:14px;font-weight:900;line-height:1;letter-spacing:-.04em;user-select:none;white-space:nowrap}
+.order-letter[data-length="2"]{font-size:11px}
+.order-letter:not([data-length="1"]):not([data-length="2"]){font-size:9px;letter-spacing:-.08em}
+@media(max-width:430px){.market-marker{gap:3px}.order-letter{min-height:22px;font-size:12px}.order-letter[data-length="2"]{font-size:9px}.order-letter:not([data-length="1"]):not([data-length="2"]){font-size:8px}}

@@ -1,6 +1,7 @@
-RC BRICK SHOP Order Picker & Packer v0.9.4
+RC BRICK SHOP Order Picker & Packer v0.9.5
 
 WHAT'S NEW
+- Brick Owl orders are assigned A, B, ... Z, AA, AB, etc. in chronological order (oldest first, from Iso Order Time; equal timestamps are ordered by order ID). The orange bin letter is displayed beside each item's vertical marketplace marker in PICK and PACK. Letters are fixed for the imported batch; eBay is unchanged.
 - Upload a ZIP containing three CSVs: eBay Paid & Shipped, Brick Owl orders, and Brick Owl order items. Nested folder paths and macOS ZIP metadata are ignored.
 - Also supports an individual eBay CSV as in v0.9.3.
 - Pick all items together, sorted by your inventory bin; vertical EBAY / BRICK OWL marketplace markers distinguish each item.
