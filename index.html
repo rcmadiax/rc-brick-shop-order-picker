@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>RC BRICK SHOP • Order Picking &amp; Packing</title>
   <link rel="stylesheet" href="picker.css">
-  <link rel="manifest" href="manifest.webmanifest?v=0.9.6">
+  <link rel="manifest" href="manifest.webmanifest?v=0.9.7">
   <meta name="theme-color" content="#f5f7fb">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="Order Picker">
-  <link rel="icon" href="icons/icon-192.png?v=0.9.6" type="image/png">
-  <link rel="apple-touch-icon" href="icons/icon-192.png?v=0.9.6">
+  <link rel="icon" href="icons/icon-192.png?v=0.9.7" type="image/png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png?v=0.9.7">
 </head>
 <body>
 <main class="picker-app">
@@ -27,6 +27,10 @@
         <div class="stats-head">SESSION PROGRESS</div>
         <div class="statline"><span id="progressText">0 / 0 picked</span><span id="pct">0%</span></div>
         <div class="progress"><div id="bar" class="bar"></div></div>
+        <div id="orderTracker" class="order-tracker" hidden aria-label="Order completion">
+          <div class="tracker-head"><span>ORDER COMPLETION</span><span id="orderReadyCount" class="tracker-count"></span></div>
+          <div id="orderBadges" class="tracker-badges" role="list" aria-label="Picking progress by order bin"></div>
+        </div>
         <div id="meta" class="meta"></div>
         <div id="fname" class="file"></div>
         <div class="actions"><button type="button" class="reset" id="reset">Reset picked status</button></div>
@@ -39,10 +43,17 @@
     </aside>
     <section class="results" aria-label="Order picking and packing workspace">
       <div class="results-header"><div><span class="eyebrow">WORKSPACE</span><h2>Picking &amp; packing checklist</h2></div></div>
+      <div id="mobileTrackerAnchor" hidden></div>
       <div id="list"><div class="empty">Upload a marketplace ZIP or an eBay / BrickLink CSV to start a session.</div></div>
     </section>
   </div>
 </main>
+<div id="completionNotice" class="completion-notice" hidden>
+  <div class="completion-symbol" aria-hidden="true">✓</div>
+  <div class="completion-copy" role="status" aria-live="polite" aria-atomic="true"><strong id="completionTitle"></strong><span id="completionDetails"></span><span class="completion-ready">Ready to bag for packing</span></div>
+  <span id="completionLetter" class="completion-letter" aria-hidden="true"></span>
+  <button id="dismissCompletion" class="completion-dismiss" type="button" aria-label="Dismiss order completion notification">×</button>
+</div>
 <div id="imgModal" class="imgmodal" hidden role="dialog" aria-label="Enlarged part image">
   <button type="button" class="closeimg" id="closeImg" aria-label="Close image">×</button>
   <img id="bigImg" alt="Enlarged part image">

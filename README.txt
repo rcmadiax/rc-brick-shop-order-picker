@@ -1,6 +1,8 @@
-RC BRICK SHOP Order Picker & Packer v0.9.6
+RC BRICK SHOP Order Picker & Packer v0.9.7
 
 WHAT'S NEW
+- PICK mode tracks all lettered orders across the entire batch. Gray = not started, orange = in progress, green = all lots picked and ready to bag.
+- An eight-second notification appears when the last lot is picked. Undo, reset, and re-import update the tracker; completion is not packing. The tracker is in the sidebar on wide screens and sticky above the picking list on narrow screens. No sound is enabled.
 - Supports BrickLink ordercsv.csv (order header followed by item rows), alongside eBay and Brick Owl in a single ZIP.
 - Brick Owl orders receive A, B, ... in oldest-first order using Iso Order Time (equal timestamps: order ID). BrickLink continues the same sequence after all Brick Owl orders, oldest Order Date first (US M/D/YYYY; ties: order sequence in report). Letters reset for a new batch; eBay does not receive letters. Z is followed by AA, AB, etc.
 - BrickLink marketplace tags are tan/caramel; the same orange order-letter badges are used for both marketplaces in PICK and PACK.
