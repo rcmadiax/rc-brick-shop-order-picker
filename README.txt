@@ -1,6 +1,8 @@
-RC BRICK SHOP Order Picker & Packer v0.9.7
+RC BRICK SHOP Order Picker & Packer v0.9.8
 
 WHAT'S NEW
+- Compact tablet sidebar keeps session controls in view on typical landscape iPad Mini screens; very large order batches scroll inside the badge area, and extremely short viewports retain a scroll fallback.
+- Completion notifications are horizontally centered over the picking workspace on tablet/desktop, near the bottom, and READY text has extra room on phones.
 - PICK mode tracks all lettered orders across the entire batch. Gray = not started, orange = in progress, green = all lots picked and ready to bag.
 - An eight-second notification appears when the last lot is picked. Undo, reset, and re-import update the tracker; completion is not packing. The tracker is in the sidebar on wide screens and sticky above the picking list on narrow screens. No sound is enabled.
 - Supports BrickLink ordercsv.csv (order header followed by item rows), alongside eBay and Brick Owl in a single ZIP.
